@@ -3,13 +3,14 @@ import Header from '../pages/shared/header/Header';
 import Footer from '../pages/shared/footer/Footer';
 import { Outlet } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
+import RughtNav from '../pages/shared/rightnav/RughtNav';
 
 const Main = () => {
     return (
         <div>
             <Header></Header>
             <Container>
-      <Row>
+      <Row className='mt-5'>
         <Col lg={3}>
             <h2>left nav</h2>
         </Col>
@@ -17,7 +18,7 @@ const Main = () => {
             <h2>Main cooming soon</h2>
         </Col>
         <Col lg={3}>
-            <h2>right nav</h2>
+            <RughtNav></RughtNav>
         </Col>
       </Row>
     </Container>
