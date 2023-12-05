@@ -5,6 +5,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Marquee from "react-fast-marquee";
 import profile from "../../../assets/user.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -31,7 +32,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto">
-              <Nav.Link to='/'>Home</Nav.Link>
+              <Nav.Link>
+                <Link className="text-decoration-none text-secondary" to='/'>Home</Link>
+              </Nav.Link>
               <Nav.Link href="#link">About</Nav.Link>
               <Nav.Link href="#link">Career</Nav.Link>
             </Nav>
