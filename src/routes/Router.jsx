@@ -17,12 +17,12 @@ const router = createBrowserRouter([
             {
                 path : '/',
                 element : <Home></Home>,
-                loader : () => fetch('http://localhost:5000/news')
+                loader : () => fetch('https://the-mahadi-news-server-7nevavowj-mahadimhs787-gmailcom.vercel.app/news')
             },
             {
                 path : 'category/:id',
                 element : <Category></Category>,
-                loader : ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader : ({params}) => fetch(`hhttps://the-mahadi-news-server-7nevavowj-mahadimhs787-gmailcom.vercel.app/categories/${params.id}`)
             }
         ]
     },
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 element : <PrivateRoutes>
                     <News></News>
                 </PrivateRoutes>,
-                loader : ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
+                loader : ({params}) => fetch(`https://the-mahadi-news-server-7nevavowj-mahadimhs787-gmailcom.vercel.app/news/${params.id}`)
             }
         ]
     },
