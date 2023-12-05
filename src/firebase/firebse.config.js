@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBtiixrMmOt2XwIVm2XEUdQNcqKFuCPfb4",
-  authDomain: "mahadi-news-2f39b.firebaseapp.com",
-  projectId: "mahadi-news-2f39b",
-  storageBucket: "mahadi-news-2f39b.appspot.com",
-  messagingSenderId: "1059989038174",
-  appId: "1:1059989038174:web:48b7be4f8eab40866f80cf"
+  apiKey: import.meta.ENV. VITE_APIKEY,
+  authDomain: import.meta.ENV. VITE_AUTHDOMAIN,
+  projectId: import.meta.ENV. VITE_PROJECTID,
+  storageBucket: import.meta.ENV. VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.ENV. VITE_MESSAGINGSENDERID,
+  appId: import.meta.ENV. VITE_APPID
 };
 
 // Initialize Firebase
