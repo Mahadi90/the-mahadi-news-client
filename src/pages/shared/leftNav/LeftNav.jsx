@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Category from '../../Home/Category/Category';
+import EditorsInsight from '../../news/EditorsInsight/EditorsInsight';
+import { Row } from 'react-bootstrap';
 
 const LeftNav = () => {
     const [categories, setCategories] = useState([])
