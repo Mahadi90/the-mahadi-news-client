@@ -34,7 +34,7 @@ const NewsCard = ({ singleCategoruNews}) => {
             <>{details}</>
           ) : (
             <>
-              {details.slice(0, 250)}....{" "}
+              {details.slice(0, 240)}....{" "}
               <Link className="text-primary" to={`/news/${_id}`}>
                 Show more
               </Link>
