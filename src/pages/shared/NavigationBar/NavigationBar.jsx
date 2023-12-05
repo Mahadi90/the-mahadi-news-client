@@ -47,13 +47,13 @@ const NavigationBar = () => {
           </Nav>
           <Nav className="d-flex align-items-center">
             {
-             user?.displayName &&   <p>Hello, {user.displayName}  </p>
+             user &&   <p>Hello, {user.displayName}  </p>
             }
             {user && (
               <img
-                className="mx-2"
-                style={{ width: 40 }}
-                src={profile}
+                className="mx-2 rounded-circle"
+                style={{ width: "50px", height : '50px' }}
+                src={user.photoURL}
                 alt=""
               />
             )}

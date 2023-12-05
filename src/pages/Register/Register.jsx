@@ -6,7 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
 
-    const { careteUser } = useContext(AuthContext)
+    const { careteUser, craeteProfile } = useContext(AuthContext)
 
    const handleregister = e => {
 
@@ -22,6 +22,13 @@ const Register = () => {
        .then(result => {
         const createdUser = result.user;
         console.log(createdUser)
+        craeteProfile(name,photo)
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
        })
        .catch(error => {
         console.log(error.messgae)
