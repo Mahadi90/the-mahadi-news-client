@@ -1,15 +1,38 @@
 import React from "react";
+import { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
+
+    const { loginUser } = useContext(AuthContext)
+
+    const handleLogin = e => {
+ 
+        e.preventDefault()
+        const form =  e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password)
+ 
+       loginUser(email, password)
+        .then(result => {
+         const loggedUser = result.user;
+         console.log(loggedUser)
+        })
+        .catch(error => {
+         console.log(error.message)
+        })
+    }
+
   return (
     <Container
       className="bg-light border border-secondary-subtle"
       style={{ width: "350px" }}
     >
       <h2 className="text-center my-3 text-secondary">Login your account</h2>
-      <Form className="mx-auto py-3 px-2">
+      <Form onSubmit={handleLogin} className="mx-auto py-3 px-2">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control

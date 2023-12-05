@@ -8,7 +8,17 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+        const { user, logout } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logout().then(result => {
+    console.log(result.user)
+    })
+    .catch(error => {
+        console.log(error.message)
+    })
+  }
+
   return (
     <Container className="">
       <div className="d-flex bg-secondary p-2">
@@ -37,7 +47,7 @@ const NavigationBar = () => {
           </Nav>
           <Nav className="d-flex align-items-center">
             {
-             user &&   <p>Hello, {user.name}</p>
+             user?.displayName &&   <p>Hello, {user.displayName}  </p>
             }
             {user && (
               <img
@@ -48,7 +58,8 @@ const NavigationBar = () => {
               />
             )}
             {user? (
-              <Link className="bg-dark text-decoration-none text-white px-5 py-2 fw-bold">Logout</Link>
+                <Link ><button className="bg-dark text-decoration-none text-white px-5 py-2 fw-bold" onClick={handleLogOut}>Logout</button></Link>
+             
             ) : (
               <Link to="/signIn/login" className="bg-dark text-decoration-none text-white px-5 py-2 fw-bold">Login</Link>
             )}
