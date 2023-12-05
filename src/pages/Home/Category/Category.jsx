@@ -10,7 +10,7 @@ const Category = () => {
 
     return (
         <div>
-            <h2>Here total news:{allCategoryNews.length}</h2>
+            <h2>All category news:{allCategoryNews.length}</h2>
             {
                 allCategoryNews.map(singleCategoruNews => 
                 <NewsCard

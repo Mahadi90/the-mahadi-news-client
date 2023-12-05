@@ -4,9 +4,9 @@ import NewsCard from '../NewsCard/NewsCard';
 
 const Home = () => {
     const allNews = useLoaderData()
+    
     return (
         <div>
-            <h2>Daily Mahadi news :{allNews.length}</h2>
             {
                 allNews.map(news => <NewsCard
                 key={news._id}
