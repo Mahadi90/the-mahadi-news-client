@@ -4,8 +4,11 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Marquee from "react-fast-marquee";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <Container className="">
       <div className="d-flex bg-secondary p-2">
@@ -33,10 +36,22 @@ const NavigationBar = () => {
             </Link>
           </Nav>
           <Nav className="d-flex align-items-center">
-            
-            <Nav.Link className="bg-dark text-white px-5 fw-bold" href="#link">
-              Login
-            </Nav.Link>
+            {
+             user &&   <p>Hello, {user.name}</p>
+            }
+            {user && (
+              <img
+                className="mx-2"
+                style={{ width: 40 }}
+                src={profile}
+                alt=""
+              />
+            )}
+            {user? (
+              <Link className="bg-dark text-decoration-none text-white px-5 py-2 fw-bold">Logout</Link>
+            ) : (
+              <Link to="/signIn/login" className="bg-dark text-decoration-none text-white px-5 py-2 fw-bold">Login</Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
