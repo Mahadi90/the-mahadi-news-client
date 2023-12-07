@@ -9,12 +9,12 @@ const LeftNav = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://the-mahadi-news-server-7nevavowj-mahadimhs787-gmailcom.vercel.app/categories")
+    fetch("http://localhost:5000/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error(error));
   }, []);
-
+  
   return (
     <div>
       <h2>All Category</h2>

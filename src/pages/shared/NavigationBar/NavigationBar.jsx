@@ -29,7 +29,7 @@ const NavigationBar = () => {
         </Marquee>
       </div>
       <Navbar expand="lg" className="bg-body-tertiary my-3">
-        <Navbar.Brand className="fw-bold" href="#home">
+        <Navbar.Brand className="fw-bold">
           Daily Mahadi
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
